@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+ <meta charset="ISO-8859-1"> 
+ <title>Welcome to Verizon</title> 
+ <style>
+.left{
+
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    border: 3px solid green;
+    text-align: left;
+}
+</style>
+ 
+ 
+ 
+ </head> 
+ <body > 
+ 
+ 
+<form name="signup"  action="homeUser.html"> 
+<br>
+ <h1 class="text-center">Welcome to Verizon</h1> 
+<div class="left">
+ Customer ID:
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   <input type="text" name="CustomerId"><br> 
+    Customer Name: 
+<span>&nbsp;&nbsp;</span>
+   <input type="text" name="Customer Name"><br> 
+    Phone Number:
+<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   <input type="number" name="PhoneNumber" onblur="checkno()"><br>
+      Shipping Address:
+   <input type="text" name="Shipping Address"><br>
+      E-mail: 
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   <input type="text" name="E-mail" onblur="checkmail()"><br> 
+   Password: 
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+   <input type="password" name="Password"><br> 
+   Confirm Password: 
+   <input type="password" name="ConfirmPassword"  ><br>
+   <input type="submit" value="Register" onclick="matchp()"> 
+</div>
+   </form>  
+   <script> 
+   function checkno() { 
+ 				var num = document.signup.PhoneNumber.value; 
+ 				if (!num.match(/^[0-9]{10}$/)) 
+ 					alert("Please enter 10 digit phone number"); 
+  
+ 			} 
+   function checkmail(){ 
+ 	  var email=document.signup.E-mail.value; 
+ 	  atpos=email.IndexOf("@"); 
+ 	  dotpos=email.lastIndexOf("."); 
+ 	  if(atpos<1||(dotos-atpos<2)) 
+       alert("Please enter correct E-mail ID");	   
+   } 
+ 			function matchp() { 
+ 				var ps = document.signup.Password.value; 
+ 				var cps = document.signup.ConfirmPassword.value; 
+ 				if (ps != cps) 
+ 					alert("Password mismatch"); 
+ 				else 
+ 					window.open('homeUser.html','_self');
+ 			} 
+ 		</script> 
+ 
+ </body> 
+ </html> 
